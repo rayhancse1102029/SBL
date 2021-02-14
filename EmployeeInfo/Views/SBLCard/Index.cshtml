@@ -4,6 +4,22 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    .form_control_common_cls {
+        border-radius: 0;
+        border: 1px solid darkgray;
+    }
+    .form_control_common_cls_width_100{
+        width: 100%
+    }
+    .checkbox_common_cls{
+        height: 18px;
+        width: 18px;
+    }
+    .checkbox_text_cls{
+        padding-left: 5px;
+    }
+</style>
 
 <section>
     <div class="card" style="padding:40px">
@@ -43,24 +59,39 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-2">Dated: </label>
+                        <div class="col-md-10">
+                            <input type="date" name="date" id="date" style="width: 50%" class="form_control_common_cls"/>
+                        </div>
+                    </div>
                     <p>
-                        Dated: ………/………/20……… <br />
-                        To <br />
-                        The Head of Card Division <br />
-                        Southeast Bank Limited 52-53,<br />
-                        Eunoos Trade Centre (Leve-5),<br />
+                        To <br/>
+                        The Head of Card Division <br/>
+                        Southeast Bank Limited 52-53,<br/>
+                        Eunoos Trade Centre (Leve-5),<br/>
                         Dilkusha C/A, Dhaka-1000
                     </p>
                 </div>
-                <div class="col-md-6" style="">
-                    <p style="padding:10px;background:whitesmoke;float:right;margin-right:30%;border:1px solid gray">
-                        <b> <u> Service Request For:</u></b> <br />
-                        □ Credit Card<br />
-                        □ Debit Card<br />
-                        □ Prepaid / Travel Card<br />
-                        □ Virtual Card
+                <div class="col-md-6" >
+                    <div style="padding:10px;background:whitesmoke;float:right;margin-right:30%;border:1px solid gray">
+                        <p>
+                            <b> <u> Service Request For:</u></b> <br />
+                        </p>
+                        <span>
+                            <input type="checkbox" name="requsetFor" id="requsetFor_01" value="1" class="form_control_common_cls checkbox_common_cls" /><span class="checkbox_text_cls">Credit Card</span>
+                        </span><br />                                                                                                                   
+                        <span>                                                                                                                          
+                            <input type="checkbox" name="requsetFor" id="requsetFor_02" value="2" class="form_control_common_cls checkbox_common_cls" /><span class="checkbox_text_cls">Debit Card</span>
+                        </span><br />                                                                                                                   
+                        <span>                                                                                                                          
+                            <input type="checkbox" name="requsetFor" id="requsetFor_03" value="3" class="form_control_common_cls checkbox_common_cls" /><span class="checkbox_text_cls">Prepaid / Travel Card</span>
+                        </span><br />                                                                                                                   
+                        <span>                                                                                                                          
+                            <input type="checkbox" name="requsetFor" id="requsetFor_04" value="4" class="form_control_common_cls checkbox_common_cls" /><span class="checkbox_text_cls">Virtual Card</span>
+                        </span>
+                    </div>
 
-                    </p>
                 </div>
                 <p style="padding-left:15px">
                     Dear Sir,<br />
@@ -69,12 +100,70 @@
             </div>
             <div class="row" style="padding-left:15px">
                 <p>
-                    ① Changing of address:     <span style="padding-left:200px;">□ Home</span>   <span style="padding-left:200px;">□ Office </span><br />
-                    as Company / House Name # ………………………………………………………………………………………….…………… Designation # …………………………………………… <br />
-                    House # …………………….…..……….. Apartment / Flat # …….…….…..……….….…… Floor # …………..…...….….……..…… Road # …………….…….….….………… <br />
+                    ① Changing of address:    
+                    <span style="padding-left:200px;">
+                        <input type="checkbox" name="addressType" id="addressType_01" value="1" class="form_control_common_cls checkbox_common_cls"/><span class="checkbox_text_cls">home</span>
+                    </span>  
+                    <span style="padding-left:200px;">
+                        <input type="checkbox" name="addressType" id="addressType_02" value="2" class="form_control_common_cls checkbox_common_cls" /> <span class="checkbox_text_cls">Office</span>
+                    </span><br />
+                   
+                    @*
                     Area / Village # …….……………...………….… PS / Thana # ………….……..…….…..……… District # ………….……...……….………… <br />
-                    Contact No: Home # …………………………………….  Office #  ……………………………………. Mobile #  …………………………………….
+                    Contact No: Home # …………………………………….  Office #  ……………………………………. Mobile #  …………………………………….*@
                 </p>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="from-group row">
+                        <label for="houseName" class="col-form-label col-md-6">as Company / House Name #</label>
+                        <div class="col-md-6">
+                            <input type="text" name="houseName" id="houseName" class="form_control_common_cls form_control_common_cls_width_100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="from-group row">
+                        <label for="designation" class="col-form-label col-md-4">Designation #</label>
+                        <div class="col-md-8">
+                            <input type="text" name="designation" id="designation" class="form_control_common_cls form_control_common_cls_width_100"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="from-group row">
+                        <label for="house" class="col-form-label col-md-5">House#</label>
+                        <div class="col-md-7">
+                            <input type="text" name="house" id="house" class="form_control_common_cls form_control_common_cls_width_100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="from-group row">
+                        <label for="flat" class="col-form-label col-md-6">Apart./Flat#</label>
+                        <div class="col-md-6">
+                            <input type="text" name="flat" id="flat" class="form_control_common_cls form_control_common_cls_width_100"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="from-group row">
+                        <label for="floor" class="col-form-label col-md-5">Floor#</label>
+                        <div class="col-md-7">
+                            <input type="text" name="floor" id="floor" class="form_control_common_cls form_control_common_cls_width_100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="from-group row">
+                        <label for="road" class="col-form-label col-md-5">Road#</label>
+                        <div class="col-md-7">
+                            <input type="text" name="road" id="road" class="form_control_common_cls form_control_common_cls_width_100"/>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row" style="padding-left:15px">
                 <p>

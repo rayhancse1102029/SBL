@@ -12,7 +12,7 @@ namespace EmployeeInfo.Models
         //   2 = Debit Card,
         //   3 = Prepaid / Travel Card,
         //   4 = Virtual Card
-        public int? requsetFor { get; set; }
+        public int?[] requsetFor { get; set; }
         // if 1 = Home, 2 = office
         public int? addressType { get; set; }
         public string houseName { get; set; }
