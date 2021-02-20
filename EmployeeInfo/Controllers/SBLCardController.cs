@@ -12,5 +12,9 @@ namespace EmployeeInfo.Controllers
         {
             return View();
         }
+        public IActionResult MordernDesign()
+        {
+            return View();
+        }
     }
 }
