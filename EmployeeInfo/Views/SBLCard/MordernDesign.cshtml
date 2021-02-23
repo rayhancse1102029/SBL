@@ -20,6 +20,7 @@
         margin-left: 50px;
         margin-top: 11px;
     }
+
     .checkbox_text_cls {
         padding-left: 5px;
     }
@@ -27,15 +28,18 @@
     .text_align_right {
         text-align: right;
     }
-    .card{
-        border-radius:0;
+
+    .card {
+        border-radius: 0;
     }
-    label{
-        color:rgba(0,0,0,0.6);
+
+    label {
+        color: rgba(0,0,0,0.6);
     }
+
     .form-control {
         border-radius: 0 !important;
-        height:32px;
+        height: 32px;
     }
 </style>
 
@@ -314,8 +318,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>
-                                            Lost cheque requisition slip, so issue <br />
-                                            a new cheque book
+                                            Lost cheque requisition slip, so <br />
+                                            issue a new cheque book
                                         </label>
                                     </div>
                                     <div class="col-md-6">
@@ -342,7 +346,7 @@
                                                     <option value="1">from BDT</option>
                                                     <option value="2"> to USD </option>
                                                     <option value="3">from USD</option>
-                                                    <option value="3">to BDT</option>
+                                                    <option value="4">to BDT</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -356,8 +360,8 @@
                                                     <option value="1"> Cancellation </option>
                                                     <option value="2"> Enrollment (minimum/full payment)</option>
                                                     <option value="3">SEBL account no</option>
-                                                    <option value="3">Branch name</option>
-                                                    <option value="3">Amount(BDT/USD)</option>
+                                                    <option value="4">Branch name</option>
+                                                    <option value="5">Amount(BDT/USD)</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -373,8 +377,8 @@
                                                     <option value="1">Salary certificate/trade license.(latest/updated)</option>
                                                     <option value="2">Bank statement.(last 06 months)</option>
                                                     <option value="3">MICR cheque leaf.(signed in favor of SEBL) </option>
-                                                    <option value="3">Expected limit:BDT</option>
-                                                    <option value="3">In word</option>
+                                                    <option value="4">Expected limit:BDT</option>
+                                                    <option value="5">In word</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -419,9 +423,11 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="row form-group">
-                                            <label> Activation for eCommerce transaction.<br />
-                                            (In case of any incident of fraud or <br />
-                                            scam the liabilities will go with me)</label>                                           
+                                            <label>
+                                                Activation for eCommerce transaction.<br />
+                                                (In case of any incident of fraud or <br />
+                                                scam the liabilities will go with me)
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -468,8 +474,8 @@
                                                     <option value="0">select certificate type</option>
                                                     <option value="1">Passport Endorsement:</option>
                                                     <option value="2">Credit card certificate:</option>
-                                                    <option value="2">Endorsement certificate:</option>
-                                                    <option value="2">No objection certificate (NOC):</option>
+                                                    <option value="3">Endorsement certificate:</option>
+                                                    <option value="4">No objection certificate (NOC):</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -481,224 +487,328 @@
                                                 <select class="form-control">
                                                     <option value="0">select service type</option>
                                                     <option value="1"> Active push pull service :</option>
-                                                    <option value="2">Active internet banking service</option>
-                                                    <option value="2"> Hardware token:</option>
-                                                    <option value="2">Software token:</option>
-                                                    <option value="2">Mobile apps:</option>
+                                                    <option value="3">Active internet banking service</option>
+                                                    <option value="4"> Hardware token:</option>
+                                                    <option value="5">Software token:</option>
+                                                    <option value="6">Mobile apps:</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                               
+                                <br />
+                                <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun04()">Next</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <div id="div_identify">
+                <div class="card">
+                    <div class="card-header collapsed" id="areaIdentify04" data-toggle="collapse" data-target="#collapseIdentify04" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                (Card holder’s signature with date)
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseIdentify04" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">Card Holder’s Name : </label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="houseName" id="houseName" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-from-label col-md-6">Card Number (from</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option value="0">select Card Number type</option>
+                                                    <option value="1">x1:</option>
+                                                    <option value="2">x2</option>
+                                                    <option value="3">x3</option>
+                                                    <option value="4">x4</option>
+                                                    <option value="5">x5</option>
+                                                    <option value="6">x6</option>
+                                                    <option value="7">x7</option>
+                                                    <option value="8">x8</option>
+                                                    <option value="9">x9</option>
+                                                    <option value="10">x10</option>
+                                                    <option value="11">x11</option>
+                                                    <option value="12">x12</option>
+                                                    <option value="13">x13</option>
+                                                    <option value="14">x14</option>
+                                                    <option value="15">x15</option>
+                                                    <option value="16">x16</option>
+                                                    <option value="17">x17</option>
+                                                    <option value="18">x18</option>
+                                                    <option value="19">x19</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">Date of Birth:</label>
+                                            <div class="col-md-6">
+                                                <input type="date" name="date" id="date" value="@DateTime.Now" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6"> Mother’s Name:</label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="houseName" id="houseName" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">Mobile Number:</label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="houseName" id="houseName" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">For Bank Use Only:</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option value="0">select Executed/Verified by </option>
+                                                    <option value="1">Executed(with designation & date)</option>
+                                                    <option value="2">Verified(with designation & date)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
                     </div>
 
 
-                                @*<div id="div_identify">
-                        <div class="card">
-                            <div class="card-header collapsed" id="areaIdentify02" data-toggle="collapse" data-target="#collapseIdentify02" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link" type="button">
-                                        Changing of address
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseIdentify02" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-form-label col-md-6">changing of address</label>
-                                                    <div class="col-md-6">
-                                                        <select class="form-control">
-                                                            <option value="0">select address type</option>
-                                                            <option value="1">home</option>
-                                                            <option value="2">office</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">As Company/House Name#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="houseName" id="houseName" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">Designation#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="designation" id="designation" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">House#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="house" id="house" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">Apart./Flat#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="flat" id="flat" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">Floor#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="floor" id="floor" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">Road#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="road" id="road" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">Area/Village#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="floor" id="floor" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">PS / Thana#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="road" id="road" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">Contact No: Home#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="floor" id="floor" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">Office#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="road" id="road" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row form-group">
-                                                    <label class="col-from-label col-md-6">Mobile#</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="floor" id="floor" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
+                </div>
+            </div>
 
-                                        </div>
+
+        </div>
+    </div>
+</section>
+
+@*<div class="row">
+        <br />
+        <div class="row" style="padding-left:15px">
+            <p>
+                <span style="color:blue;font-size:70%">(Card holder’s signature with date)</span><br />
+                Card Holder’s Name :
+            </p>
+        </div>
+        <div class="row from-group" style="padding-left:15px">
+            <div class="col-xl-2 col-lg-2 col-md-2  col-sm-2">Card Number : </div>
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 ">
+                <div class="row custom-control-inline">
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                    <input type="text" name="" id="" style="width:35px" />
+                </div>
+
+            </div>
+        </div>
+        <div class="row" style="padding-left:15px">
+            <div class="col-md-6">
+                <p>
+                    Date of Birth : <br />
+                    Mother’s Name: <br />
+                    Mobile Number:
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="" style="padding:5px;float:right;margin-right:50px;border:1px solid gray">
+                    <p style="background:#eae9e9;">
+                        <b style="padding-left:5px">
+                            <u>For Bank Use Only: </u>
+                        </b><br />
+                    </p>
+                    <span style="padding-left:5px">
+                        Executed by <span style="font-size:60%">(with designation & date) ………………………………………….</span> <br />
+                        Verified by <span style="font-size:60%">(with designation & date) ……………………………………………</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>*@
+@*<div id="div_identify">
+        <div class="card">
+            <div class="card-header collapsed" id="areaIdentify02" data-toggle="collapse" data-target="#collapseIdentify02" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button">
+                        Changing of address
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseIdentify02" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-form-label col-md-6">changing of address</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control">
+                                            <option value="0">select address type</option>
+                                            <option value="1">home</option>
+                                            <option value="2">office</option>
+                                        </select>
                                     </div>
-
-                                    <br />
-                                    <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun03()">Next</button>
-                                    <br />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">As Company/House Name#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="houseName" id="houseName" class="form-control" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>*@
-
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">Designation#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="designation" id="designation" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">House#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="house" id="house" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">Apart./Flat#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="flat" id="flat" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">Floor#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="floor" id="floor" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">Road#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="road" id="road" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">Area/Village#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="floor" id="floor" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">PS / Thana#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="road" id="road" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">Contact No: Home#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="floor" id="floor" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">Office#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="road" id="road" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <label class="col-from-label col-md-6">Mobile#</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="floor" id="floor" class="form-control" />
+                                    </div>
+                                </div>
                             </div>
 
+                        </div>
+                    </div>
 
-
-                            @*<div class="row">
                     <br />
-                    <div class="row" style="padding-left:15px">
-                        <p>
-                            <span style="color:blue;font-size:70%">(Card holder’s signature with date)</span><br />
-                            Card Holder’s Name :
-                        </p>
-                    </div>
-                    <div class="row from-group" style="padding-left:15px">
-                        <div class="col-xl-2 col-lg-2 col-md-2  col-sm-2">Card Number : </div>
-                        <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 ">
-                            <div class="row custom-control-inline">
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                                <input type="text" name="" id="" style="width:35px" />
-                            </div>
+                    <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun03()">Next</button>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>*@
 
-                        </div>
-                    </div>
-                    <div class="row" style="padding-left:15px">
-                        <div class="col-md-6">
-                            <p>
-                                Date of Birth : <br />
-                                Mother’s Name: <br />
-                                Mobile Number:
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="" style="padding:5px;float:right;margin-right:50px;border:1px solid gray">
-                                <p style="background:#eae9e9;">
-                                    <b style="padding-left:5px">
-                                        <u>For Bank Use Only: </u>
-                                    </b><br />
-                                </p>
-                                <span style="padding-left:5px">
-                                    Executed by <span style="font-size:60%">(with designation & date) ………………………………………….</span> <br />
-                                    Verified by <span style="font-size:60%">(with designation & date) ……………………………………………</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>*@
 
-                        </div>
-</section>
 
-@section Scripts{ 
+@section Scripts{
     <script>
 
         function nextFun01() {
@@ -709,6 +819,9 @@
         }
         function nextFun03() {
             $("#areaIdentify03").click();
+        }
+        function nextFun04() {
+            $("#areaIdentify04").click();
         }
     </script>
 }
