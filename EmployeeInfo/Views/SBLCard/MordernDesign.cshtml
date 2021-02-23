@@ -294,10 +294,10 @@
                                         <div class="row form-group">
                                             <label class="col-form-label col-md-6">Issue/active cheque book</label>
                                             <div class="col-md-6">
-                                                <select class="form-control">
+                                                <select class="form-control" id="issue_cheque_book_id" onchange="issueChequeBookFun()">
                                                     <option value="0">select active cheque book type</option>
                                                     <option value="1">Issue new book</option>
-                                                    <option value="2">Active cheque book (Leaf from to)</option>
+                                                    <option value="2">Active cheque book </option>
                                                 </select>
                                             </div>
                                         </div>
@@ -311,6 +311,24 @@
                                                     <option value="1">Block it</option>
                                                     <option value="2">found it, so re-open/active it</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="issue_cheque_book_row_id">
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6"> Active cheque From </label>
+                                            <div class="col-md-6">
+                                                <input type="date" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">Active cheque To </label>
+                                            <div class="col-md-6">
+                                                <input type="date" name="" id="" class="form-control" />
                                             </div>
                                         </div>
                                     </div>
@@ -432,13 +450,9 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Change of signature: </label>
+                                            <label class="col-from-label col-md-6">Old Signature </label>
                                             <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select signature type</option>
-                                                    <option value="1">Old signature:</option>
-                                                    <option value="2">New signature:</option>
-                                                </select>
+                                               <input type="file" class="form-control"/>
                                             </div>
                                         </div>
                                     </div>
@@ -811,6 +825,8 @@
 @section Scripts{
     <script>
 
+        $("#issue_cheque_book_row_id").hide();
+
         function nextFun01() {
             $("#areaIdentify").click();
         }
@@ -823,5 +839,16 @@
         function nextFun04() {
             $("#areaIdentify04").click();
         }
+
+        function issueChequeBookFun() {
+
+            var id = $("#issue_cheque_book_id option:selected").val();
+            if (id == 2) {
+                $("#issue_cheque_book_row_id").show();
+            } else {
+                $("#issue_cheque_book_row_id").hide();
+            }
+        }
+
     </script>
 }
