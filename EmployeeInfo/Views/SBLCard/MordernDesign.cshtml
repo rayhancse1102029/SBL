@@ -64,7 +64,7 @@
                                         <div class="form-group row">
                                             <label class="col-form-label col-md-2">Dated </label>
                                             <div class="col-md-10">
-                                                <input type="date" name="date" id="date" value="@DateTime.Now" class="form-control" />
+                                                <input type="text" name="date" id="date" autocomplete="off" readonly="readonly"  class="form-control" />
                                             </div>
                                         </div>
                                     </div>
@@ -379,8 +379,8 @@
                                             <div class="col-md-6">
                                                 <select class="form-control" id="Limit_conversation_id03" onchange="LimitConversationFun03()">
                                                     <option value="0">select Limit conversation type</option>
-                                                    <option value="1">from BDT</option>
-                                                    <option value="3">from USD</option>
+                                                    <option value="1">from BDT to USD</option>
+                                                    <option value="2">from USD to BDT</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -398,24 +398,42 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row" id="Limit_conversation_row_id03">
+                                <div class="row" id="Limit_conversation_row_id_for_bdt_to_usd">
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">From BDT</label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="row form-group">
                                             <label class="col-form-label col-md-6">To USD</label>
                                             <div class="col-md-6">
-                                                <input type="date" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">TO BDT</label>
-                                            <div class="col-md-6">
-                                                <input type="date" name="" id="" class="form-control" />
+                                                <input type="text" name="" id="" class="form-control" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            <div class="row" id="Limit_conversation_row_id_for_usd_to_bdt">
+                                <div class="col-md-6">
+                                    <div class="row form-group">
+                                        <label class="col-form-label col-md-6">From USD</label>
+                                        <div class="col-md-6">
+                                            <input type="text" name="" id="" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row form-group">
+                                        <label class="col-form-label col-md-6">To BDT</label>
+                                        <div class="col-md-6">
+                                            <input type="text" name="" id="" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                                 <div class="row" id="Auto_debit_instruction_row_id04">
                                     <div class="col-md-4">
                                         <div class="row form-group">
@@ -489,9 +507,9 @@
                                     </div>
                                 </div>
                                 <div class="row form-group" id="waive_row_id06">
-                                    <label class="col-form-label col-md-6">(Reason:)</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="" id="" class="form-control" />
+                                    <label class="col-form-label col-md-2">(Reason:)</label>
+                                    <div class="col-md-10">
+                                        <textarea rows="2"  type="text" name="" id="" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <br />
@@ -712,12 +730,17 @@
 @section Scripts{
     <script>
 
+       
+        $('#date').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
+
         $("#issue_cheque_book_row_id").hide();
         $("#lost_cheque_book_row_id02").hide();
-        $("#Limit_conversation_row_id03").hide();
+        $("#Limit_conversation_row_id_for_bdt_to_usd").hide();
+        $("#Limit_conversation_row_id_for_usd_to_bdt").hide();
         $("#Auto_debit_instruction_row_id04").hide();
         $("#Enhance_limit_credit_card_row_id05").hide();
         $("#waive_row_id06").hide();
+
 
         function nextFun01() {
             $("#areaIdentify").click();
@@ -745,19 +768,27 @@
         function LostChequeBookFun02() {
 
             var id = $("#Lost_cheque_book_id02 option:selected").val();
-            if (id == 2) {
+            if (id == 1 || id == 2) {
                 $("#lost_cheque_book_row_id02").show();
-            } else {
-                $("#lost_cheque_book_row_id02").show();
+            }
+            else {
+                $("#lost_cheque_book_row_id02").hide();
             }
         }
 
         function LimitConversationFun03() {
             var id = $("#Limit_conversation_id03 option:selected").val();
-            if (id == 2) {
-                $("#Limit_conversation_row_id03").show();
-            } else {
-                $("#Limit_conversation_row_id03").show();
+            if (id == 1) {
+                $("#Limit_conversation_row_id_for_bdt_to_usd").show();
+                $("#Limit_conversation_row_id_for_usd_to_bdt").hide();
+            }
+            else if (id == 2) {
+                $("#Limit_conversation_row_id_for_bdt_to_usd").hide();
+                $("#Limit_conversation_row_id_for_usd_to_bdt").show();
+            }
+            else {
+                $("#Limit_conversation_row_id_for_bdt_to_usd").hide();
+                $("#Limit_conversation_row_id_for_usd_to_bdt").hide();
             }
         }
 
@@ -780,7 +811,8 @@
         }
 
         function WaibeFun06() {
-            var id = $("#waive_id06 option:selected").val();
+            var id = $("#waibe_id06 option:selected").val();
+           
             if (id == 2) {
                 $("#waive_row_id06").show();
             } else {
