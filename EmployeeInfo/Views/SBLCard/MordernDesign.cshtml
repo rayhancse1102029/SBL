@@ -304,9 +304,9 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Lost cheque book.(Leaf from to)</label>
+                                            <label class="col-from-label col-md-6">Lost cheque book.</label>
                                             <div class="col-md-6">
-                                                <select class="form-control">
+                                                <select class="form-control" id="Lost_cheque_book_id02" onchange="LostChequeBookFun02()">
                                                     <option value="0">select Lost cheque book type</option>
                                                     <option value="1">Block it</option>
                                                     <option value="2">found it, so re-open/active it</option>
@@ -327,6 +327,24 @@
                                     <div class="col-md-6">
                                         <div class="row form-group">
                                             <label class="col-form-label col-md-6">Active cheque To </label>
+                                            <div class="col-md-6">
+                                                <input type="date" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="lost_cheque_book_row_id02">
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6"> lost cheque From </label>
+                                            <div class="col-md-6">
+                                                <input type="date" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">lost cheque To </label>
                                             <div class="col-md-6">
                                                 <input type="date" name="" id="" class="form-control" />
                                             </div>
@@ -359,12 +377,10 @@
                                         <div class="row form-group">
                                             <label class="col-from-label col-md-6">Limit conversation</label>
                                             <div class="col-md-6">
-                                                <select class="form-control">
+                                                <select class="form-control" id="Limit_conversation_id03" onchange="LimitConversationFun03()">
                                                     <option value="0">select Limit conversation type</option>
                                                     <option value="1">from BDT</option>
-                                                    <option value="2"> to USD </option>
                                                     <option value="3">from USD</option>
-                                                    <option value="4">to BDT</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -373,30 +389,70 @@
                                         <div class="row form-group">
                                             <label class="col-from-label col-md-6">Auto debit instruction.</label>
                                             <div class="col-md-6">
-                                                <select class="form-control">
+                                                <select class="form-control" id="Auto_debit_instruction_id04" onchange="AutoDebitFun04()">
                                                     <option value="0">select Auto debit instruction type</option>
                                                     <option value="1"> Cancellation </option>
                                                     <option value="2"> Enrollment (minimum/full payment)</option>
-                                                    <option value="3">SEBL account no</option>
-                                                    <option value="4">Branch name</option>
-                                                    <option value="5">Amount(BDT/USD)</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row" id="Limit_conversation_row_id03">
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">To USD</label>
+                                            <div class="col-md-6">
+                                                <input type="date" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">TO BDT</label>
+                                            <div class="col-md-6">
+                                                <input type="date" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="Auto_debit_instruction_row_id04">
+                                    <div class="col-md-4">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">SEBL account no</label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">Branch name</label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">Amount(BDT/USD)</label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="row form-group">
                                             <label class="col-from-label col-md-6">Enhance the limit of credit card. (Enclosed documents)</label>
                                             <div class="col-md-6">
-                                                <select class="form-control">
+                                                <select class="form-control" id="Enhance_limit_credit_card_id05" onchange="EnchaceLimitFun05()">
                                                     <option value="0">select Enhance the limit of credit card type</option>
                                                     <option value="1">Salary certificate/trade license.(latest/updated)</option>
                                                     <option value="2">Bank statement.(last 06 months)</option>
                                                     <option value="3">MICR cheque leaf.(signed in favor of SEBL) </option>
-                                                    <option value="4">Expected limit:BDT</option>
-                                                    <option value="5">In word</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -405,13 +461,37 @@
                                         <div class="row form-group">
                                             <label class="col-from-label col-md-6">Waive</label>
                                             <div class="col-md-6">
-                                                <select class="form-control">
+                                                <select class="form-control" id="waibe_id06" onchange="WaibeFun06()">
                                                     <option value="0">select Waive type</option>
                                                     <option value="1">Late fees</option>
-                                                    <option value="2">Interest.(Reason:</option>
+                                                    <option value="2">Interest.</option>
                                                 </select>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="Enhance_limit_credit_card_row_id05">
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">Expected limit:BDT</label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <label class="col-form-label col-md-6">In word</label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="" id="" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group" id="waive_row_id06">
+                                    <label class="col-form-label col-md-6">(Reason:)</label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="" id="" class="form-control" />
                                     </div>
                                 </div>
                                 <br />
@@ -627,205 +707,17 @@
     </div>
 </section>
 
-@*<div class="row">
-        <br />
-        <div class="row" style="padding-left:15px">
-            <p>
-                <span style="color:blue;font-size:70%">(Card holder’s signature with date)</span><br />
-                Card Holder’s Name :
-            </p>
-        </div>
-        <div class="row from-group" style="padding-left:15px">
-            <div class="col-xl-2 col-lg-2 col-md-2  col-sm-2">Card Number : </div>
-            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 ">
-                <div class="row custom-control-inline">
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                    <input type="text" name="" id="" style="width:35px" />
-                </div>
-
-            </div>
-        </div>
-        <div class="row" style="padding-left:15px">
-            <div class="col-md-6">
-                <p>
-                    Date of Birth : <br />
-                    Mother’s Name: <br />
-                    Mobile Number:
-                </p>
-            </div>
-            <div class="col-md-6">
-                <div class="" style="padding:5px;float:right;margin-right:50px;border:1px solid gray">
-                    <p style="background:#eae9e9;">
-                        <b style="padding-left:5px">
-                            <u>For Bank Use Only: </u>
-                        </b><br />
-                    </p>
-                    <span style="padding-left:5px">
-                        Executed by <span style="font-size:60%">(with designation & date) ………………………………………….</span> <br />
-                        Verified by <span style="font-size:60%">(with designation & date) ……………………………………………</span>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>*@
-@*<div id="div_identify">
-        <div class="card">
-            <div class="card-header collapsed" id="areaIdentify02" data-toggle="collapse" data-target="#collapseIdentify02" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" type="button">
-                        Changing of address
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseIdentify02" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-form-label col-md-6">changing of address</label>
-                                    <div class="col-md-6">
-                                        <select class="form-control">
-                                            <option value="0">select address type</option>
-                                            <option value="1">home</option>
-                                            <option value="2">office</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">As Company/House Name#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="houseName" id="houseName" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">Designation#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="designation" id="designation" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">House#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="house" id="house" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">Apart./Flat#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="flat" id="flat" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">Floor#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="floor" id="floor" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">Road#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="road" id="road" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">Area/Village#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="floor" id="floor" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">PS / Thana#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="road" id="road" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">Contact No: Home#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="floor" id="floor" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">Office#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="road" id="road" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row form-group">
-                                    <label class="col-from-label col-md-6">Mobile#</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="floor" id="floor" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <br />
-                    <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun03()">Next</button>
-                    <br />
-                </div>
-            </div>
-        </div>
-    </div>*@
-
 
 
 @section Scripts{
     <script>
 
         $("#issue_cheque_book_row_id").hide();
+        $("#lost_cheque_book_row_id02").hide();
+        $("#Limit_conversation_row_id03").hide();
+        $("#Auto_debit_instruction_row_id04").hide();
+        $("#Enhance_limit_credit_card_row_id05").hide();
+        $("#waive_row_id06").hide();
 
         function nextFun01() {
             $("#areaIdentify").click();
@@ -849,6 +741,52 @@
                 $("#issue_cheque_book_row_id").hide();
             }
         } 
+
+        function LostChequeBookFun02() {
+
+            var id = $("#Lost_cheque_book_id02 option:selected").val();
+            if (id == 2) {
+                $("#lost_cheque_book_row_id02").show();
+            } else {
+                $("#lost_cheque_book_row_id02").show();
+            }
+        }
+
+        function LimitConversationFun03() {
+            var id = $("#Limit_conversation_id03 option:selected").val();
+            if (id == 2) {
+                $("#Limit_conversation_row_id03").show();
+            } else {
+                $("#Limit_conversation_row_id03").show();
+            }
+        }
+
+        function AutoDebitFun04() {
+            var id = $("#Auto_debit_instruction_id04 option:selected").val();
+            if (id == 0) {
+                $("#Auto_debit_instruction_row_id04").hide();
+            } else {
+                $("#Auto_debit_instruction_row_id04").show();
+            }
+        }
+
+        function EnchaceLimitFun05() {
+            var id = $("#Enhance_limit_credit_card_id05 option:selected").val();
+            if (id == 2) {
+                $("#Enhance_limit_credit_card_row_id05").show();
+            } else {
+                $("#Enhance_limit_credit_card_row_id05").show();
+            }
+        }
+
+        function WaibeFun06() {
+            var id = $("#waive_id06 option:selected").val();
+            if (id == 2) {
+                $("#waive_row_id06").show();
+            } else {
+                $("#waive_row_id06").hide();
+            }
+        }
 
     </script>
 }
