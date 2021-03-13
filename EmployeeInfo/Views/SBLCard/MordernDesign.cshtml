@@ -44,685 +44,746 @@
 </style>
 
 <section>
-    <div class="container">
-        <div class="accordion" id="accordionExample">
-            <div id="live_stock_info_div_id">
-                <div class="card">
-                    <div class="card-header btn" id="headingLifestock" data-toggle="collapse" data-target="#collapseLifestock" aria-expanded="true" aria-controls="collapseLifestock" style="cursor:pointer">
-                        <h5 class="mb-0 text-left">
-                            <button class="btn btn-link" type="button">
-                                Basic Information
-                            </button>
-                        </h5>
-                    </div>
-
-                    <div id="collapseLifestock" class="collapse show" aria-labelledby="headingLifestock" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-form-label col-md-2">Dated </label>
-                                            <div class="col-md-10">
-                                                <input type="text" name="date" id="date" autocomplete="off" readonly="readonly"  class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-form-label col-md-5">Service Request For </label>
-                                            <div class="col-md-7">
-                                                <select class="form-control">
-                                                    <option value="0">select service type</option>
-                                                    <option value="1">credit card</option>
-                                                    <option value="2">debit card</option>
-                                                    <option value="3">prepaid/travel card</option>
-                                                    <option value="4">cirtual card</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <br />
-                            <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun01()">Next</button>
-                            <br />
+    <form method="post">
+        <div class="container">
+            <div class="accordion" id="accordionExample">
+                <div id="live_stock_info_div_id">
+                    <div class="card">
+                        <div class="card-header btn" id="headingLifestock" data-toggle="collapse" data-target="#collapseLifestock" aria-expanded="true" aria-controls="collapseLifestock" style="cursor:pointer">
+                            <h5 class="mb-0 text-left">
+                                <button class="btn btn-link" type="button">
+                                    Basic Information
+                                </button>
+                            </h5>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-
-            <div id="div_identify">
-                <div class="card">
-                    <div class="card-header collapsed" id="areaIdentify" data-toggle="collapse" data-target="#collapseIdentify" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button">
-                                Changing of address
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseIdentify" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">changing of address</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select address type</option>
-                                                    <option value="1">home</option>
-                                                    <option value="2">office</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">As Company/House Name#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="houseName" id="houseName" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Designation#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="designation" id="designation" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">House#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="house" id="house" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Apart./Flat#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="flat" id="flat" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Floor#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="floor" id="floor" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Road#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="road" id="road" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Area/Village#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="floor" id="floor" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">PS / Thana#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="road" id="road" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Contact No: Home#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="floor" id="floor" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Office#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="road" id="road" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Mobile#</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="floor" id="floor" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <br />
-                            <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun02()">Next</button>
-                            <br />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="div_identify">
-                <div class="card">
-                    <div class="card-header collapsed" id="areaIdentify02" data-toggle="collapse" data-target="#collapseIdentify02" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button">
-                                card information
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseIdentify02" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="container">
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6"> Credit card</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select Credit card type</option>
-                                                    <option value="1">Active it </option>
-                                                    <option value="2">Re-issue / replace card (expired card / lost card</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Captured / lost credit card. </label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select lost credit card type</option>
-                                                    <option value="1">Active it </option>
-                                                    <option value="2"> found it, so re-open / active it </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6"> Cancel / close credit card. (Reason: </label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="houseName" id="houseName" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6"> Issue a new PIN / replacement of PIN</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select Issue a new PIN type</option>
-                                                    <option value="1"> Primary  card  </option>
-                                                    <option value="2">Supplementary card</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">Issue/active cheque book</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control" id="issue_cheque_book_id" onchange="issueChequeBookFun()">
-                                                    <option value="0">select active cheque book type</option>
-                                                    <option value="1">Issue new book</option>
-                                                    <option value="2">Active cheque book </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Lost cheque book.</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control" id="Lost_cheque_book_id02" onchange="LostChequeBookFun02()">
-                                                    <option value="0">select Lost cheque book type</option>
-                                                    <option value="1">Block it</option>
-                                                    <option value="2">found it, so re-open/active it</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" id="issue_cheque_book_row_id">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6"> Active cheque From </label>
-                                            <div class="col-md-6">
-                                                <input type="date" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">Active cheque To </label>
-                                            <div class="col-md-6">
-                                                <input type="date" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" id="lost_cheque_book_row_id02">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6"> lost cheque From </label>
-                                            <div class="col-md-6">
-                                                <input type="date" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">lost cheque To </label>
-                                            <div class="col-md-6">
-                                                <input type="date" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>
-                                            Lost cheque requisition slip, so <br />
-                                            issue a new cheque book
-                                        </label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Update document(s)(photocopy enclosed).</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select Update document type</option>
-                                                    <option value="1"> NID </option>
-                                                    <option value="2"> Passport </option>
-                                                    <option value="3">eTIN</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Limit conversation</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control" id="Limit_conversation_id03" onchange="LimitConversationFun03()">
-                                                    <option value="0">select Limit conversation type</option>
-                                                    <option value="1">from BDT to USD</option>
-                                                    <option value="2">from USD to BDT</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Auto debit instruction.</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control" id="Auto_debit_instruction_id04" onchange="AutoDebitFun04()">
-                                                    <option value="0">select Auto debit instruction type</option>
-                                                    <option value="1"> Cancellation </option>
-                                                    <option value="2"> Enrollment (minimum/full payment)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" id="Limit_conversation_row_id_for_bdt_to_usd">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">From BDT</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">To USD</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="row" id="Limit_conversation_row_id_for_usd_to_bdt">
-                                <div class="col-md-6">
-                                    <div class="row form-group">
-                                        <label class="col-form-label col-md-6">From USD</label>
+                        <div id="collapseLifestock" class="collapse show" aria-labelledby="headingLifestock" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
                                         <div class="col-md-6">
-                                            <input type="text" name="" id="" class="form-control" />
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-2">Dated </label>
+                                                <div class="col-md-10">
+                                                    <input type="text" name="date" id="date" autocomplete="off" readonly="readonly" class="form-control" />
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row form-group">
-                                        <label class="col-form-label col-md-6">To BDT</label>
                                         <div class="col-md-6">
-                                            <input type="text" name="" id="" class="form-control" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="row" id="Auto_debit_instruction_row_id04">
-                                    <div class="col-md-4">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">SEBL account no</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">Branch name</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">Amount(BDT/USD)</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="" id="" class="form-control" />
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-5">Service Request For </label>
+                                                <div class="col-md-7">
+                                                    <select name="requsetFor" id="requsetFor" class="form-control">
+                                                        <option value="0">select service type</option>
+                                                        <option value="1">credit card</option>
+                                                        <option value="2">debit card</option>
+                                                        <option value="3">prepaid/travel card</option>
+                                                        <option value="4">cirtual card</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Enhance the limit of credit card. (Enclosed documents)</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control" id="Enhance_limit_credit_card_id05" onchange="EnchaceLimitFun05()">
-                                                    <option value="0">select Enhance the limit of credit card type</option>
-                                                    <option value="1">Salary certificate/trade license.(latest/updated)</option>
-                                                    <option value="2">Bank statement.(last 06 months)</option>
-                                                    <option value="3">MICR cheque leaf.(signed in favor of SEBL) </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Waive</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control" id="waibe_id06" onchange="WaibeFun06()">
-                                                    <option value="0">select Waive type</option>
-                                                    <option value="1">Late fees</option>
-                                                    <option value="2">Interest.</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" id="Enhance_limit_credit_card_row_id05">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">Expected limit:BDT</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">In word</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="" id="" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row form-group" id="waive_row_id06">
-                                    <label class="col-form-label col-md-2">(Reason:)</label>
-                                    <div class="col-md-10">
-                                        <textarea rows="2"  type="text" name="" id="" class="form-control"></textarea>
-                                    </div>
-                                </div>
                                 <br />
-                                <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun03()">Next</button>
+                                <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun01()">Next</button>
+                                <br />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="div_identify">
+                    <div class="card">
+                        <div class="card-header collapsed" id="areaIdentify" data-toggle="collapse" data-target="#collapseIdentify" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button">
+                                    Changing of address
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseIdentify" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">changing of address</label>
+                                                <div class="col-md-6">
+                                                    <select name="addressType" id="addressType" class="form-control">
+                                                        <option value="0">select address type</option>
+                                                        <option value="1">home</option>
+                                                        <option value="2">office</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">As Company/House Name#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="houseName" id="houseName" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Designation#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="designation" id="designation" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">House#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="house" id="house" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Apart./Flat#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="flat" id="flat" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Floor#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="floor" id="floor" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Road#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="road" id="road" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Area/Village#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="village" id="village" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">PS / Thana#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="thana" id="thana" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Contact No: Home#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="district" id="district" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Office#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="mobileOffice" id="mobileOffice" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Mobile#</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="mobile" id="mobile" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <br />
+                                <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun02()">Next</button>
                                 <br />
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-            </div>
+                <div id="div_identify">
+                    <div class="card">
+                        <div class="card-header collapsed" id="areaIdentify02" data-toggle="collapse" data-target="#collapseIdentify02" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button">
+                                    card information
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseIdentify02" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="container">
 
-            <div id="div_identify">
-                <div class="card">
-                    <div class="card-header collapsed" id="areaIdentify03" data-toggle="collapse" data-target="#collapseIdentify03" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button">
-                                card information
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseIdentify03" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="container">
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6"> Credit card</label>
+                                                <div class="col-md-6">
+                                                    <select name="creaditCard" id="creaditCard" class="form-control">
+                                                        <option value="0">select Credit card type</option>
+                                                        <option value="1">Active it </option>
+                                                        <option value="2">Re-issue / replace card (expired card / lost card</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Captured / lost credit card. </label>
+                                                <div class="col-md-6">
+                                                    <select name="lostCard" id="lostCard" class="form-control">
+                                                        <option value="0">select lost credit card type</option>
+                                                        <option value="1">Active it </option>
+                                                        <option value="2"> found it, so re-open / active it </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6"> Cancel / close credit card. (Reason: </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="closeCreditCardReason" id="closeCreditCardReason" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6"> Issue a new PIN / replacement of PIN</label>
+                                                <div class="col-md-6">
+                                                    <select name="IssueANewPIN" id="IssueANewPIN" class="form-control">
+                                                        <option value="0">select Issue a new PIN type</option>
+                                                        <option value="1"> Primary  card  </option>
+                                                        <option value="2">Supplementary card</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">Issue/active cheque book</label>
+                                                <div class="col-md-6">
+                                                    <select name="ActiveChequeBook" class="form-control" id="issue_cheque_book_id" onchange="issueChequeBookFun()">
+                                                        <option value="0">select active cheque book type</option>
+                                                        <option value="1">Issue new book</option>
+                                                        <option value="2">Active cheque book </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Lost cheque book.</label>
+                                                <div class="col-md-6">
+                                                    <select name="LostChequeBookFor" class="form-control" id="Lost_cheque_book_id02" onchange="LostChequeBookFun02()">
+                                                        <option value="0">select Lost cheque book type</option>
+                                                        <option value="1">Block it</option>
+                                                        <option value="2">found it, so re-open/active it</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="issue_cheque_book_row_id">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6"> Active cheque From </label>
+                                                <div class="col-md-6">
+                                                    <input type="date" name="leafForm" id="leafForm" autocomplete="off" readonly="readonly" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">Active cheque To </label>
+                                                <div class="col-md-6">
+                                                    <input type="date" name="leafTo" id="leafTo" autocomplete="off" readonly="readonly" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="lost_cheque_book_row_id02">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6"> lost cheque From </label>
+                                                <div class="col-md-6">
+                                                    <input type="date" name="LostChequeBookForm" id="LostChequeBookForm" autocomplete="off" readonly="readonly" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">lost cheque To </label>
+                                                <div class="col-md-6">
+                                                    <input type="date" name="LostChequeBookTo" id="LostChequeBookTo" autocomplete="off" readonly="readonly" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
                                             <label>
-                                                Activation for eCommerce transaction.<br />
-                                                (In case of any incident of fraud or <br />
-                                                scam the liabilities will go with me)
+                                                Lost cheque requisition slip, so <br />
+                                                issue a new cheque book
                                             </label>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Old Signature </label>
-                                            <div class="col-md-6">
-                                               <input type="file" class="form-control"/>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Update document(s)(photocopy enclosed).</label>
+                                                <div class="col-md-6">
+                                                    <select name="LosUpdateDocument" class="form-control" id="Update_Document_id09" onchange="UpdateDocumentFun09()">
+                                                        <option value="0">select Update document type</option>
+                                                        <option value="1"> NID </option>
+                                                        <option value="2"> Passport </option>
+                                                        <option value="3">eTIN</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row form-group" id="Update_Document_row_id09_nid">
+                                        <label class="col-form-label col-md-2">NID</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="" id="" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group" id="Update_Document_row_id09_pass">
+                                        <label class="col-form-label col-md-2">Passport</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="" id="" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group" id="Update_Document_row_id09_eTin">
+                                        <label class="col-form-label col-md-2">eTin</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="" id="" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Limit conversation</label>
+                                                <div class="col-md-6">
+                                                    <select name="LimitConversation" class="form-control" id="Limit_conversation_id03" onchange="LimitConversationFun03()">
+                                                        <option value="0">select Limit conversation type</option>
+                                                        <option value="1">from BDT to USD</option>
+                                                        <option value="2">from USD to BDT</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Auto debit instruction.</label>
+                                                <div class="col-md-6">
+                                                    <select name="AutoDebitInstruction" class="form-control" id="Auto_debit_instruction_id04" onchange="AutoDebitFun04()">
+                                                        <option value="0">select Auto debit instruction type</option>
+                                                        <option value="1"> Cancellation </option>
+                                                        <option value="2"> Enrollment (minimum/full payment)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="Limit_conversation_row_id_for_bdt_to_usd">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">From BDT</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="formBDT" id="formBDT" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">To USD</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="toUSD" id="toUSD" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="Limit_conversation_row_id_for_usd_to_bdt">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">From USD</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="formUSD" id="formUSD" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">To BDT</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="toBDT" id="toBDT" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="Auto_debit_instruction_row_id04">
+                                        <div class="col-md-4">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">SEBL account no</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="accountNo" id="accountNo" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">Branch name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="BranchName" id="BranchName" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">Amount(BDT/USD)</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="AmountBDT_USD" id="AmountBDT_USD" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Enhance the limit of credit card. (Enclosed documents)</label>
+                                                <div class="col-md-6">
+                                                    <select name="EnhanceLimitCreditCard" class="form-control" id="Enhance_limit_credit_card_id05" onchange="EnchaceLimitFun05()">
+                                                        <option value="0">select Enhance the limit of credit card type</option>
+                                                        <option value="1">Salary certificate/trade license.(latest/updated)</option>
+                                                        <option value="2">Bank statement.(last 06 months)</option>
+                                                        <option value="3">MICR cheque leaf.(signed in favor of SEBL) </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Waive</label>
+                                                <div class="col-md-6">
+                                                    <select name="Waive" class="form-control" id="waibe_id06" onchange="WaibeFun06()">
+                                                        <option value="0">select Waive type</option>
+                                                        <option value="1">Late fees</option>
+                                                        <option value="2">Interest.</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="Enhance_limit_credit_card_row_id05">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">Expected limit:BDT</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="BDT" id="BDT" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">In word</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="Inword" id="Inword" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group" id="waive_row_id06">
+                                        <label class="col-form-label col-md-2">(Reason:)</label>
+                                        <div class="col-md-10">
+                                            <textarea rows="2" type="text" name="Reason" id="Reason" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun03()">Next</button>
+                                    <br />
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6"> Add / Change of eMail ID for eStatement: </label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="houseName" id="houseName" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Duplicate statement of credit card. (from</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select statement of credit card type</option>
-                                                    <option value="1">from month:</option>
-                                                    <option value="2">to month:</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">certificate information</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select certificate type</option>
-                                                    <option value="1">Passport Endorsement:</option>
-                                                    <option value="2">Credit card certificate:</option>
-                                                    <option value="3">Endorsement certificate:</option>
-                                                    <option value="4">No objection certificate (NOC):</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">service option</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select service type</option>
-                                                    <option value="1"> Active push pull service :</option>
-                                                    <option value="3">Active internet banking service</option>
-                                                    <option value="4"> Hardware token:</option>
-                                                    <option value="5">Software token:</option>
-                                                    <option value="6">Mobile apps:</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br />
-                                <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun04()">Next</button>
-                                <br />
                             </div>
                         </div>
+
+
                     </div>
-                    
                 </div>
-            </div>
 
+                <div id="div_identify">
+                    <div class="card">
+                        <div class="card-header collapsed" id="areaIdentify03" data-toggle="collapse" data-target="#collapseIdentify03" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button">
+                                    card information
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseIdentify03" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="container">
 
-            <div id="div_identify">
-                <div class="card">
-                    <div class="card-header collapsed" id="areaIdentify04" data-toggle="collapse" data-target="#collapseIdentify04" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button">
-                                (Card holder’s signature with date)
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseIdentify04" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="container">
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">Card Holder’s Name : </label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="houseName" id="houseName" class="form-control" />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label>
+                                                    Activation for eCommerce transaction.<br />
+                                                    (In case of any incident of fraud or <br />
+                                                    scam the liabilities will go with me)
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6"> Change of signature </label>
+                                                <div class="col-md-6">
+                                                    <select name="signature" class="form-control" id="signature_id07" onchange="signatureFun07()">
+                                                        <option value="0">select signature type</option>
+                                                        <option value="1">old signature</option>
+                                                        <option value="2">new signature</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-from-label col-md-6">Card Number (from</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select Card Number type</option>
-                                                    <option value="1">x1:</option>
-                                                    <option value="2">x2</option>
-                                                    <option value="3">x3</option>
-                                                    <option value="4">x4</option>
-                                                    <option value="5">x5</option>
-                                                    <option value="6">x6</option>
-                                                    <option value="7">x7</option>
-                                                    <option value="8">x8</option>
-                                                    <option value="9">x9</option>
-                                                    <option value="10">x10</option>
-                                                    <option value="11">x11</option>
-                                                    <option value="12">x12</option>
-                                                    <option value="13">x13</option>
-                                                    <option value="14">x14</option>
-                                                    <option value="15">x15</option>
-                                                    <option value="16">x16</option>
-                                                    <option value="17">x17</option>
-                                                    <option value="18">x18</option>
-                                                    <option value="19">x19</option>
-                                                </select>
+                                    <div class="row" id="signature_row_id07">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">old signature </label>
+                                                <div class="col-md-6">
+                                                    <input type="file" name="OldSignature" id="OldSignature" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">new signature </label>
+                                                <div class="col-md-6">
+                                                    <input type="file" name="NewSignature" id="NewSignature" class="form-control" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6"> Add / Change of eMail ID for eStatement: </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="ChangeEmail" id="ChangeEmail" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Duplicate statement of credit card. (from</label>
+                                                <div class="col-md-6">
+                                                    <select class="form-control" id="Duplicate_statement_id08" onchange="statementFun08()">
+                                                        <option value="0">select statement of credit card type</option>
+                                                        <option value="1">Duplicate statement of credit card</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="Duplicate_statement_row_id08">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">From Month </label>
+                                                <div class="col-md-6">
+                                                    <input type="date" name="FormMonthe" id="FormMonthe" autocomplete="off" readonly="readonly" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">To Month</label>
+                                                <div class="col-md-6">
+                                                    <input type="date" name="ToMonth" id="ToMonth" autocomplete="off" readonly="readonly" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">certificate information</label>
+                                                <div class="col-md-6">
+                                                    <select name="certificate" id="certificate" class="form-control">
+                                                        <option value="0">select certificate type</option>
+                                                        <option value="1">Passport Endorsement:</option>
+                                                        <option value="2">Credit card certificate:</option>
+                                                        <option value="3">Endorsement certificate:</option>
+                                                        <option value="4">No objection certificate (NOC):</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">service option</label>
+                                                <div class="col-md-6">
+                                                    <select name="service" id="service" class="form-control">
+                                                        <option value="0">select service type</option>
+                                                        <option value="1"> Active push pull service :</option>
+                                                        <option value="3">Active internet banking service</option>
+                                                        <option value="4"> Hardware token:</option>
+                                                        <option value="5">Software token:</option>
+                                                        <option value="6">Mobile apps:</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <button type="button" class="btn btn float-right" style="float:right; background:#FE9900;color:white" onclick="nextFun04()">Next</button>
+                                    <br />
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">Date of Birth:</label>
-                                            <div class="col-md-6">
-                                                <input type="date" name="date" id="date" value="@DateTime.Now" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6"> Mother’s Name:</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="houseName" id="houseName" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">Mobile Number:</label>
-                                            <div class="col-md-6">
-                                                <input type="text" name="houseName" id="houseName" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row form-group">
-                                            <label class="col-form-label col-md-6">For Bank Use Only:</label>
-                                            <div class="col-md-6">
-                                                <select class="form-control">
-                                                    <option value="0">select Executed/Verified by </option>
-                                                    <option value="1">Executed(with designation & date)</option>
-                                                    <option value="2">Verified(with designation & date)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
+
                     </div>
-
-
                 </div>
+
+
+                <div id="div_identify">
+                    <div class="card">
+                        <div class="card-header collapsed" id="areaIdentify04" data-toggle="collapse" data-target="#collapseIdentify04" aria-expanded="false" aria-controls="collapseIdentify" style="cursor:pointer">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button">
+                                    (Card holder’s signature with date)
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseIdentify04" class="collapse" aria-labelledby="areaIdentify" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="container">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">Card Holder’s Name : </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="houseName" id="houseName" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-from-label col-md-6">Card Number (from</label>
+                                                <div class="col-md-6">
+                                                    <select class="form-control">
+                                                        <option value="0">select Card Number type</option>
+                                                        <option value="1">x1:</option>
+                                                        <option value="2">x2</option>
+                                                        <option value="3">x3</option>
+                                                        <option value="4">x4</option>
+                                                        <option value="5">x5</option>
+                                                        <option value="6">x6</option>
+                                                        <option value="7">x7</option>
+                                                        <option value="8">x8</option>
+                                                        <option value="9">x9</option>
+                                                        <option value="10">x10</option>
+                                                        <option value="11">x11</option>
+                                                        <option value="12">x12</option>
+                                                        <option value="13">x13</option>
+                                                        <option value="14">x14</option>
+                                                        <option value="15">x15</option>
+                                                        <option value="16">x16</option>
+                                                        <option value="17">x17</option>
+                                                        <option value="18">x18</option>
+                                                        <option value="19">x19</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">Date of Birth:</label>
+                                                <div class="col-md-6">
+                                                    <input type="date" name="date" id="date" value="@DateTime.Now" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6"> Mother’s Name:</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="houseName" id="houseName" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">Mobile Number:</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="houseName" id="houseName" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <label class="col-form-label col-md-6">For Bank Use Only:</label>
+                                                <div class="col-md-6">
+                                                    <select class="form-control">
+                                                        <option value="0">select Executed/Verified by </option>
+                                                        <option value="1">Executed(with designation & date)</option>
+                                                        <option value="2">Verified(with designation & date)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
             </div>
-
-
         </div>
-    </div>
+        <button type="submit">Save</button>
+    </form>
 </section>
 
 
@@ -740,6 +801,11 @@
         $("#Auto_debit_instruction_row_id04").hide();
         $("#Enhance_limit_credit_card_row_id05").hide();
         $("#waive_row_id06").hide();
+        $("#signature_row_id07").hide();
+        $("#Duplicate_statement_row_id08").hide();       
+        $("#Update_Document_row_id09_nid").hide();
+        $("#Update_Document_row_id09_pass").hide();
+        $("#Update_Document_row_id09_eTin").hide();
 
 
         function nextFun01() {
@@ -819,6 +885,57 @@
                 $("#waive_row_id06").hide();
             }
         }
+        function signatureFun07() {
+            var id = $("#signature_id07 option:selected").val();
+            if (id == 2) {
+                $("#signature_row_id07").show();
+            } else {
+                $("#signature_row_id07").show();
+            }
+        }
+        function statementFun08() {
+            var id = $("#Duplicate_statement_id08 option:selected").val();
+
+            if (id == 1) {
+                $("#Duplicate_statement_row_id08").show();
+            } else {
+                $("#Duplicate_statement_row_id08").hide();
+            }
+        }
+        function UpdateDocumentFun09() {
+
+            var id = $("#Update_Document_id09 option:selected").val();
+
+            if (id == 1) {
+
+                $("#Update_Document_row_id09_nid").show();
+                $("#Update_Document_row_id09_pass").hide();
+                $("#Update_Document_row_id09_eTin").hide();
+
+            }            
+            else if (id == 2) {
+
+                $("#Update_Document_row_id09_nid").hide();
+                $("#Update_Document_row_id09_pass").show();
+                $("#Update_Document_row_id09_eTin").hide();
+
+            }
+            else if (id == 3) {
+
+                $("#Update_Document_row_id09_nid").hide();
+                $("#Update_Document_row_id09_pass").hide();
+                $("#Update_Document_row_id09_eTin").show();
+
+            }
+            else {
+
+                $("#Update_Document_row_id09_nid").hide();
+                $("#Update_Document_row_id09_pass").hide();
+                $("#Update_Document_row_id09_eTin").hide();
+            }
+        }
+           
+
 
     </script>
 }

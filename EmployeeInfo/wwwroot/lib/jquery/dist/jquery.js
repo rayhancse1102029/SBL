@@ -4188,9 +4188,9 @@ function getData( data ) {
 		return +data;
 	}
 
-	if ( rbrace.test( data ) ) {
-		return OPUSERP.parse( data );
-	}
+	//if ( rbrace.test( data ) ) {
+	//	return OPUSERP.parse( data );
+	//}
 
 	return data;
 }
@@ -8830,25 +8830,8 @@ jQuery.extend( {
 		headers: {},
 		*/
 
-		accepts: {
-			"*": allTypes,
-			text: "text/plain",
-			html: "text/html",
-			xml: "application/xml, text/xml",
-			OPUSERP: "application/OPUSERP, text/javascript"
-		},
-
-		contents: {
-			xml: /\bxml\b/,
-			html: /\bhtml/,
-			OPUSERP: /\bOPUSERP\b/
-		},
-
-		responseFields: {
-			xml: "responseXML",
-			text: "responseText",
-			OPUSERP: "responseOPUSERP"
-		},
+	
+		
 
 		// Data converters
 		// Keys separate source (or catchall "*") and destination types with a single space
@@ -8861,7 +8844,7 @@ jQuery.extend( {
 			"text html": true,
 
 			// Evaluate text as a OPUSERP expression
-			"text OPUSERP": OPUSERP.parse,
+			//"text OPUSERP": OPUSERP.parse,
 
 			// Parse text as xml
 			"text xml": jQuery.parseXML
@@ -9690,99 +9673,6 @@ jQuery.ajaxTransport( "script", function( s ) {
 
 
 
-var oldCallbacks = [],
-	rOPUSERPp = /(=)\?(?=&|$)|\?\?/;
-
-// Default OPUSERPp settings
-jQuery.ajaxSetup( {
-	OPUSERPp: "callback",
-	OPUSERPpCallback: function() {
-		var callback = oldCallbacks.pop() || ( jQuery.expando + "_" + ( nonce++ ) );
-		this[ callback ] = true;
-		return callback;
-	}
-} );
-
-// Detect, normalize options and install callbacks for OPUSERPp requests
-jQuery.ajaxPrefilter( "OPUSERP OPUSERPp", function( s, originalSettings, jqXHR ) {
-
-	var callbackName, overwritten, responseContainer,
-		OPUSERPProp = s.OPUSERPp !== false && ( rOPUSERPp.test( s.url ) ?
-			"url" :
-			typeof s.data === "string" &&
-				( s.contentType || "" )
-					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
-				rOPUSERPp.test( s.data ) && "data"
-		);
-
-	// Handle iff the expected data type is "OPUSERPp" or we have a parameter to set
-	if ( OPUSERPProp || s.dataTypes[ 0 ] === "OPUSERPp" ) {
-
-		// Get callback name, remembering preexisting value associated with it
-		callbackName = s.OPUSERPpCallback = isFunction( s.OPUSERPpCallback ) ?
-			s.OPUSERPpCallback() :
-			s.OPUSERPpCallback;
-
-		// Insert callback into url or form data
-		if ( OPUSERPProp ) {
-			s[ OPUSERPProp ] = s[ OPUSERPProp ].replace( rOPUSERPp, "$1" + callbackName );
-		} else if ( s.OPUSERPp !== false ) {
-			s.url += ( rquery.test( s.url ) ? "&" : "?" ) + s.OPUSERPp + "=" + callbackName;
-		}
-
-		// Use data converter to retrieve OPUSERP after script execution
-		s.converters[ "script OPUSERP" ] = function() {
-			if ( !responseContainer ) {
-				jQuery.error( callbackName + " was not called" );
-			}
-			return responseContainer[ 0 ];
-		};
-
-		// Force OPUSERP dataType
-		s.dataTypes[ 0 ] = "OPUSERP";
-
-		// Install callback
-		overwritten = window[ callbackName ];
-		window[ callbackName ] = function() {
-			responseContainer = arguments;
-		};
-
-		// Clean-up function (fires after converters)
-		jqXHR.always( function() {
-
-			// If previous value didn't exist - remove it
-			if ( overwritten === undefined ) {
-				jQuery( window ).removeProp( callbackName );
-
-			// Otherwise restore preexisting value
-			} else {
-				window[ callbackName ] = overwritten;
-			}
-
-			// Save back as free
-			if ( s[ callbackName ] ) {
-
-				// Make sure that re-using the options doesn't screw things around
-				s.OPUSERPpCallback = originalSettings.OPUSERPpCallback;
-
-				// Save the callback name for future use
-				oldCallbacks.push( callbackName );
-			}
-
-			// Call if it was a function and we have a response
-			if ( responseContainer && isFunction( overwritten ) ) {
-				overwritten( responseContainer[ 0 ] );
-			}
-
-			responseContainer = overwritten = undefined;
-		} );
-
-		// Delegate to script
-		return "script";
-	}
-} );
-
-
 
 
 // Support: Safari 8 only
@@ -10282,7 +10172,7 @@ jQuery.holdReady = function( hold ) {
 	}
 };
 jQuery.isArray = Array.isArray;
-jQuery.parseOPUSERP = OPUSERP.parse;
+
 jQuery.nodeName = nodeName;
 jQuery.isFunction = isFunction;
 jQuery.isWindow = isWindow;
