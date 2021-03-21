@@ -18,5 +18,15 @@ namespace EmployeeInfo.Data
             this.httpContextAccessor = httpContextAccessor;
         }
         public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
     }
 }

@@ -55,7 +55,7 @@
 </style>
 
 <section>
-    <form  @*asp-controller="SBLCard" asp-action="MordernDesign2"*@  method="post">
+    <form id="myForm"  @*asp-controller="Home" asp-action="SaveFormHomeController"  method="post"*@>
         <div class="container">
             <div class="accordion" id="accordionExample">
                 <div id="live_stock_info_div_id">
@@ -746,7 +746,7 @@
                                 <div class="row form-group">
                                     <label class="col-form-label col-md-6">Date of Birth:</label>
                                     <div class="col-md-6">
-                                        <input type="date" name="date" id="date" value="@DateTime.Now" class="form-control" />
+                                        <input type="text" name="date" id="dateOfBirth" autocomplete="off" readonly="readonly" class="form-control" />
                                     </div>
                                 </div>
                             </div>
@@ -795,7 +795,7 @@
     </div>
     <br />
     <div class="container-fluid">
-        <button type="submit" id="submitBtn" class="btn btn-success" style="float:right;">Save</button>
+        <button type="button" onclick="submitFun()" id="submitBtn" class="btn btn-success" style="float:right;">Save</button>
         <br />
         <br />
         <br />
@@ -811,9 +811,11 @@
 
        
         $('#date').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
-        $('#issue_cheque_book_row_id').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
-        $('#Lost_cheque_book_row_id02').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
-        $('#date').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
+        $('#LostChequeBookForm').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
+        $('#LostChequeBookTo').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
+        $('#leafForm').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
+        $('#leafTo').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
+        $('#dateOfBirth').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
 
         $("#issue_cheque_book_row_id").hide();
         $("#lost_cheque_book_row_id02").hide();
@@ -956,7 +958,24 @@
             }
         }
            
+        function submitFun() {
 
+            var data = $("#myForm").serialize();
 
+            $.ajax({
+                url: "/SBLCard/AjaxSave",
+                type: "post",
+                data: data,
+                success: function(res) {
+
+                    if (res == "success") {
+                        alert("Data Save Successfully !!!");
+                    } else {
+                        alert("Something is wrong please try again !!!");
+                    }
+                }
+            })
+
+        }
     </script>
 }
