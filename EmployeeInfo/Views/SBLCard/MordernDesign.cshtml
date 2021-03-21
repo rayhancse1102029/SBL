@@ -44,7 +44,7 @@
 </style>
 
 <section>
-    <form  @*asp-controller="SBLCard" asp-action="MordernDesign"*@  method="post">
+    <form  @*asp-controller="SBLCard" asp-action="MordernDesign2"*@  method="post">
         <div class="container">
             <div class="accordion" id="accordionExample">
                 <div id="live_stock_info_div_id">
@@ -196,7 +196,7 @@
                                             <div class="row form-group">
                                                 <label class="col-from-label col-md-6">Contact No: Home#</label>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="district" id="district" class="form-control" />
+                                                    <input type="text" name="mobileHome" id="mobileHome" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -321,7 +321,7 @@
                                             <div class="row form-group">
                                                 <label class="col-form-label col-md-6"> Active cheque From </label>
                                                 <div class="col-md-6">
-                                                    <input type="date" name="leafForm" id="leafForm" autocomplete="off" readonly="readonly" class="form-control" />
+                                                    <input type="text" name="leafForm" id="leafForm" autocomplete="off" readonly="readonly" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -329,7 +329,7 @@
                                             <div class="row form-group">
                                                 <label class="col-form-label col-md-6">Active cheque To </label>
                                                 <div class="col-md-6">
-                                                    <input type="date" name="leafTo" id="leafTo" autocomplete="off" readonly="readonly" class="form-control" />
+                                                    <input type="text" name="leafTo" id="leafTo" autocomplete="off" readonly="readonly" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -339,7 +339,7 @@
                                             <div class="row form-group">
                                                 <label class="col-form-label col-md-6"> lost cheque From </label>
                                                 <div class="col-md-6">
-                                                    <input type="date" name="LostChequeBookForm" id="LostChequeBookForm" autocomplete="off" readonly="readonly" class="form-control" />
+                                                    <input type="text" name="LostChequeBookForm" id="LostChequeBookForm" autocomplete="off" readonly="readonly" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -347,7 +347,7 @@
                                             <div class="row form-group">
                                                 <label class="col-form-label col-md-6">lost cheque To </label>
                                                 <div class="col-md-6">
-                                                    <input type="date" name="LostChequeBookTo" id="LostChequeBookTo" autocomplete="off" readonly="readonly" class="form-control" />
+                                                    <input type="text" name="LostChequeBookTo" id="LostChequeBookTo" autocomplete="off" readonly="readonly" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -376,19 +376,19 @@
                                     <div class="row form-group" id="Update_Document_row_id09_nid">
                                         <label class="col-form-label col-md-2">NID</label>
                                         <div class="col-md-10">
-                                            <input type="text" name="" id="" class="form-control" />
+                                            <input type="text" name="Nid" id="Nid" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row form-group" id="Update_Document_row_id09_pass">
                                         <label class="col-form-label col-md-2">Passport</label>
                                         <div class="col-md-10">
-                                            <input type="text" name="" id="" class="form-control" />
+                                            <input type="text" name="Password" id="Password" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="row form-group" id="Update_Document_row_id09_eTin">
                                         <label class="col-form-label col-md-2">eTin</label>
                                         <div class="col-md-10">
-                                            <input type="text" name="" id="" class="form-control" />
+                                            <input type="text" name="etin" id="etin" class="form-control" />
                                         </div>
                                     </div>
 
@@ -792,6 +792,9 @@
     <script>
 
        
+        $('#date').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
+        $('#issue_cheque_book_row_id').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
+        $('#Lost_cheque_book_row_id02').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
         $('#date').datepicker({ dateFormat: "dd-M-yy", showAnim: "scale", changeMonth: true, changeYear: true, yearRange: "1900:4100" });
 
         $("#issue_cheque_book_row_id").hide();
