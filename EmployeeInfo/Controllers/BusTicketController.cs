@@ -23,18 +23,25 @@ namespace EmployeeInfo.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(BusTicketViewModel model)
         {
-            BusTicket customer = new BusTicket
+            try
             {
-                pname = model.pname,
-                paddress = model.paddress,
-                form = model.form,
-                to = model.to,
-                sitno = model.sitno,
-                amount = model.amount,
-                comment = model.comment,
-            };
-            _context.BusTickets.Add(customer);
-            await _context.SaveChangesAsync();
+                BusTicket customer = new BusTicket
+                {
+                    pname = model.pname,
+                    paddress = model.paddress,
+                    form = model.form,
+                    to = model.to,
+                    sitno = model.sitno,
+                    amount = model.amount,
+                    comment = model.comment,
+                };
+                _context.BusTickets.Add(customer);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
 
             return View();
         }
