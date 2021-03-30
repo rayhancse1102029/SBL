@@ -19,6 +19,8 @@ namespace EmployeeInfo.Data
         }
 
         public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
+        public DbSet<AssignmentMarch> AssignmentMarchs { get; set; }      
+        public DbSet<BusTicket> BusTickets { get; set; }      
         //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
         //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }
         //public DbSet<CustomerRequsition> CustomerRequsitions { get; set; }

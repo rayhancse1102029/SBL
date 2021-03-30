@@ -4,14 +4,16 @@ using EmployeeInfo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EmployeeInfo.Migrations
 {
     [DbContext(typeof(SBLDbContext))]
-    partial class SBLDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210324123146_version_Assignment_march")]
+    partial class version_Assignment_march
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,39 +99,6 @@ namespace EmployeeInfo.Migrations
                     b.HasKey("id");
 
                     b.ToTable("AssignmentMarchs");
-                });
-
-            modelBuilder.Entity("EmployeeInfo.Data.Entity.BusTicket", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("amount");
-
-                    b.Property<string>("comment");
-
-                    b.Property<DateTime?>("createdAt");
-
-                    b.Property<string>("createdBy");
-
-                    b.Property<string>("form");
-
-                    b.Property<string>("paddress");
-
-                    b.Property<string>("pname");
-
-                    b.Property<string>("sitno");
-
-                    b.Property<string>("to");
-
-                    b.Property<DateTime?>("updatedAt");
-
-                    b.Property<string>("updatedBy");
-
-                    b.HasKey("id");
-
-                    b.ToTable("BusTickets");
                 });
 
             modelBuilder.Entity("EmployeeInfo.Data.Entity.CustomerRequsition", b =>
