@@ -16,7 +16,7 @@
 </style>
 
 <section>
-    <form asp-controller="BusTicket" asp-action="Index" method="post">
+    <form id="myForm" asp-controller="BusTicket" asp-action="Index" method="post">
         <div class="card">
             <div class="card-header" style="color:green">
                 <p style="text-align:center; color:blue;font-size:50px">BUS TICKET</p>
@@ -83,7 +83,49 @@
                     </div>
                 </div>
             </div>
+
         </div>
-        <button type="button" onclick="submitFun()" id="submitBtn" class="btn btn-success" style="float:right;">Save</button>
+
+        <button type="submit"
+                id="submitBtn"
+                class="btn btn-success"
+                style="float:right;">
+            Save
+        </button>
+
+        @*<button
+        type="submit"
+        onclick="submitFun()"
+        id="submitBtn"
+        class="btn btn-success"
+        style="float:right;">Save</button>*@
     </form>
 </section>
+
+@section Scripts{
+    
+    <script>
+
+        //function submitFun() {
+
+        //    var data = $("#myForm").serialize();
+
+        //    $.ajax({
+        //        url: "/BusTicket/Index",
+        //        type: "post",
+        //        data: data,
+        //        success: function(res) {
+
+        //            if (res == "success") {
+        //                alert("Data Save Successfully !!!");
+        //            } else {
+        //                alert("Something is wrong please try again !!!");
+        //            }
+        //        }
+        //    })
+
+        //}
+
+    </script>
+
+}
