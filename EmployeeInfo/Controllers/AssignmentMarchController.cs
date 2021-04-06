@@ -37,5 +37,35 @@ namespace EmployeeInfo.Controllers
             return View();
            
         }
+
+        [HttpPost]
+        public async Task<IActionResult> IndexSaveByAjaxFun(AssignmentMrachViewModel model)
+        {
+            string msg = "error";
+            try
+            {
+                AssignmentMarch customer = new AssignmentMarch
+                {
+                    FristName = model.FristName,
+                    LesttName = model.LesttName,
+                    Email = model.Email,
+                    Subject = model.Subject,
+                    Massage = model.Massage,
+                };
+                _context.AssignmentMarchs.Add(customer);
+                await _context.SaveChangesAsync();
+                msg = "success";
+
+            }
+            catch (Exception e)
+            {
+                msg = "error";
+                //throw e;
+            }
+
+            return Json(msg);
+
+        }
+
     }
 }

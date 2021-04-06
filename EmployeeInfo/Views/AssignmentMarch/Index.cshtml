@@ -6,7 +6,7 @@
 
 
 <section>
-    <form asp-controller="AssignmentMarch" asp-action="Index" method="post">
+    <form id="myForm" @*asp-controller="AssignmentMarch" asp-action="Index" method="post"*@>
         <div class="card">
             <div class="card-header" style="text-align:center;background:#ebecec;color:green">
                 <p style="font-size:50px">AssignmentMarch</p>
@@ -50,7 +50,45 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-success" style="float:right;">Save</button>
+        @*<button type="submit" class="btn btn-success" style="float:right;">Save</button>*@
+        <button type="button" class="btn btn-success" onclick="submitFun()" style="float:right;">Save</button>
     </form>
 </section>
 
+@section Scripts
+
+{
+    <script>
+
+        $(document).ready(function() {
+
+        });
+
+        function submitFun() {
+
+            var data = $("#myForm").serialize();
+
+            $.ajax({
+                url: "/AssignmentMarch/IndexSaveByAjaxFun",
+                type: "post",
+                data: data,
+                success: function (res) {
+                    //console.log(res);
+                    if (res == "success") {
+                        swal({
+                            title: 'Success!', text: 'Saved Successfully!', type: 'success', showCancelButton: false, confirmButtonColor: '#3085d6', confirmButtonText: 'Ok!'
+                        }).then(function () {
+                            location.reload();
+                        });
+
+                    }
+                    else {
+                        swal('Warning!', 'Unable to save!', 'warning');
+                    }
+                }
+        })
+
+        }
+
+    </script>
+}
