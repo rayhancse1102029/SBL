@@ -45,5 +45,32 @@ namespace EmployeeInfo.Controllers
 
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> IndexSaveByAjaxFun(BusTicketViewModel model)
+        {
+            string msg = "error";
+            try
+            {
+                BusTicket customer = new BusTicket
+                {
+                    pname = model.pname,
+                    paddress = model.paddress,
+                    form = model.form,
+                    to = model.to,
+                    sitno = model.sitno,
+                    amount = model.amount,
+                    comment = model.comment,
+                };
+                _context.BusTickets.Add(customer);
+                await _context.SaveChangesAsync();
+                msg = "success";
+            }
+            catch (Exception e)
+            {
+                msg = "error";
+            }
+
+            return Json(msg);
+        }
     }
 }

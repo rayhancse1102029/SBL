@@ -86,12 +86,7 @@
 
         </div>
 
-        <button type="submit"
-                id="submitBtn"
-                class="btn btn-success"
-                style="float:right;">
-            Save
-        </button>
+        <button type="button" class="btn btn-success" onclick="submitFun()" style="float:right;">Save</button>
 
         @*<button
         type="submit"
@@ -106,25 +101,34 @@
     
     <script>
 
-        //function submitFun() {
+        $(document).ready(function () {
 
-        //    var data = $("#myForm").serialize();
+        });
 
-        //    $.ajax({
-        //        url: "/BusTicket/Index",
-        //        type: "post",
-        //        data: data,
-        //        success: function(res) {
+        function submitFun() {
 
-        //            if (res == "success") {
-        //                alert("Data Save Successfully !!!");
-        //            } else {
-        //                alert("Something is wrong please try again !!!");
-        //            }
-        //        }
-        //    })
+            var data = $("#myForm").serialize();
 
-        //}
+            $.ajax({
+                url: "/BusTicket/IndexSaveByAjaxFun",
+                type: "post",
+                data: data,
+                success: function (res) {                    
+                    if (res == "success") {
+                        swal({
+                            title: 'Success!', text: 'Saved Successfully!', type: 'success', showCancelButton: false, confirmButtonColor: '#3085d6', confirmButtonText: 'Ok!'
+                        }).then(function () {
+                            location.reload();
+                        });
+
+                    }
+                    else {
+                        swal('Warning!', 'Unable to save!', 'warning');
+                    }
+                }
+            })
+
+        }
 
     </script>
 
